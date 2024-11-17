@@ -447,30 +447,55 @@
         </div>
       </header>
       <!-- End Navbar -->
+    
       <section>
         <div class="w-full pt-32 lg:pt-48 bg-white border-t border-b border-gray-200 px-4 py-10 text-gray-800">
           <div class="w-full max-w-3xl mx-auto">
-            <div class=" md:flex items-start">
+            <div class="md:flex items-start">
               <div class="w-full lg:pr-10">
+                <!-- Item Details -->
                 <div class="w-full mx-auto text-gray-800 font-light mb-6 border-b border-gray-200 pb-6">
                   <div class="w-full flex items-center">
+                    <!-- Item Image -->
                     <div class="overflow-hidden rounded-lg w-32 h-20 bg-gray-50 border border-gray-200">
-                      <img src="https://t3.ftcdn.net/jpg/02/91/35/16/360_F_291351654_FFAS60r2iHUkOY69RPRwEOVS76EU4SdA.jpg" alt="">
+                      <img src="https://t3.ftcdn.net/jpg/02/91/35/16/360_F_291351654_FFAS60r2iHUkOY69RPRwEOVS76EU4SdA.jpg" alt="Whole Turkey Chicken">
                     </div>
+      
+                    <!-- Item Title and Additional Details -->
                     <div class="flex-grow pl-3">
                       <h6 class="font-semibold uppercase text-gray-600">Whole Turkey Chicken (1)</h6>
-                      <div class="flex items-center mt-1">
-                        <button onclick="decrementQuantity()" class="px-4 font-bold text-center text-2xl text-white py-1 bg-orange-500 rounded-md">-</button>
-                        <input id="quantityInput" type="number" min="1" value="1" class="px-2 py-2 mx-2 text-center border border-gray-200 rounded-md w-12">
-                        <button onclick="incrementQuantity()" class="px-4 font-bold text-center text-2xl text-white  py-1 bg-orange-500  rounded-md">+</button>
+                      <div class="flex flex-col lg:flex-row lg:gap-10 lg:justify-start justify-center lg:items-center">
+
+                        <!-- Display Selected Flavors -->
+                        <div class="mt-2">
+                          <p class="text-sm text-gray-500 mb-2">Selected Flavors:</p>
+                          <ul class=" font-semibold bg-orange-100 rounded-md px-2 py-1 flex justify-center gap-2">
+                            <li>Garlic</li>
+                            <li>Spicy</li>
+                           
+                          </ul>
+                        </div>
+        
+                        <!-- Quantity Selection -->
+                        <div class="mt-4">
+                          <p class="text-sm text-gray-500">Quantity:</p>
+                          <div class="flex items-center mt-1">
+                            <button onclick="decrementQuantity()" class="px-3 font-bold text-center text-xl text-white bg-orange-500 rounded-md">-</button>
+                            <input id="quantityInput" type="number" min="1" value="1" class="mx-3 text-center border border-gray-300 rounded-md w-14 py-1" />
+                            <button onclick="incrementQuantity()" class="px-3 font-bold text-center text-xl text-white bg-orange-500 rounded-md">+</button>
+                          </div>
+                        </div>
                       </div>
                     </div>
-                    <div>
-                      <span class="font-semibold text-gray-600 text-xl">$5</span>
+      
+                    <!-- Item Price -->
+                    <div class="text-xl font-semibold text-gray-600">
+                      $5
                     </div>
                   </div>
                 </div>
       
+                <!-- Subtotal and Tax Details -->
                 <div class="mb-6 pb-6 border-b border-gray-200 text-gray-800">
                   <div class="w-full flex mb-3 items-center">
                     <div class="flex-grow">
@@ -489,6 +514,8 @@
                     </div>
                   </div>
                 </div>
+      
+                <!-- Total Amount -->
                 <div class="mb-6 pb-6 border-b border-gray-200 md:border-none text-gray-800 text-xl">
                   <div class="w-full flex items-center">
                     <div class="flex-grow">
@@ -499,12 +526,36 @@
                     </div>
                   </div>
                 </div>
+      
+                <!-- Proceed to Checkout Button -->
                 <a class="inline-block py-3 text-center px-6 bg-gradient-to-r from-orange-500 to-red-500 w-full shadow-lg hover:bg-[#F37016] text-md text-white font-bold rounded-md transition duration-200" href="checkout.html">Proceed to Checkout</a>
               </div>
             </div>
           </div>
         </div>
       </section>
+      
+      <script>
+        // JavaScript to handle quantity increment and decrement
+        function incrementQuantity() {
+          var quantityInput = document.getElementById('quantityInput');
+          var currentValue = parseInt(quantityInput.value);
+          if (!isNaN(currentValue)) {
+            quantityInput.value = currentValue + 1;
+          }
+        }
+      
+        function decrementQuantity() {
+          var quantityInput = document.getElementById('quantityInput');
+          var currentValue = parseInt(quantityInput.value);
+          if (!isNaN(currentValue) && currentValue > 1) {
+            quantityInput.value = currentValue - 1;
+          }
+        }
+      </script>
+      
+      
+        
       
       <!--Footer-->
       <footer

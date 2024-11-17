@@ -13,7 +13,19 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
+    />
+
     <style>
+      .owl-nav {
+        display: none;
+      }
       header {
         position: fixed;
         z-index: 1000;
@@ -67,33 +79,6 @@
       .dropdown-content a:hover {
         background-color: #f37016;
         color: white;
-      }
-      .hero-section {
-        background-image: url("./images/background.png");
-        background-size: cover;
-        background-position: center;
-        animation: growShrink 10s infinite alternate;
-        height: 900px;
-      }
-
-      @media (max-width: 840px) {
-        .hero-section {
-          background-image: url("./images/background.png");
-          background-position: left;
-          background-size: cover;
-          background-repeat: no-repeat;
-          animation: none;
-          height: 560px;
-        }
-
-        @keyframes growShrinkMobile {
-          0% {
-            background-size: 100%;
-          }
-          100% {
-            background-size: 120%;
-          }
-        }
       }
     </style>
   </head>
@@ -287,15 +272,31 @@
               >Order Now</a
             >
             <!-- Cart Icon with Badge -->
-            <a href="cart.html" class="relative lg:inline-block  border text-lg text-white font-bold transition duration-200 ml-4">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-12 px-2 py-2 w-12 text-white bg-gradient-to-r from-orange-500 to-red-500 rounded-full inline" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l1.3-5H6.3L7 13zM7 13L6 21h12l-1-8M3 3l3.6 2H17m-3 8h5l1-5H7L6 13h11-5m0-8H7" />
+            <a
+              href="cart.html"
+              class="relative lg:inline-block border text-lg text-white font-bold transition duration-200 ml-4"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-12 px-2 py-2 w-12 text-white bg-gradient-to-r from-orange-500 to-red-500 rounded-full inline"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M3 3h2l.4 2M7 13h10l1.3-5H6.3L7 13zM7 13L6 21h12l-1-8M3 3l3.6 2H17m-3 8h5l1-5H7L6 13h11-5m0-8H7"
+                />
               </svg>
               <!-- Cart Count Badge -->
-              <span class="absolute top-0 right-0 text-red-500 -mt-2 -mr-2 rounded-full bg-white text-sm font-extrabold py-1 px-2">
-                  3
+              <span
+                class="absolute top-0 right-0 text-red-500 -mt-2 -mr-2 rounded-full bg-white text-sm font-extrabold py-1 px-2"
+              >
+                3
               </span>
-          </a>
+            </a>
           </nav>
         </div>
         <div class="navbar-menu relative z-50 hidden">
@@ -324,7 +325,7 @@
             class="navbar-backdrop fixed inset-0 bg-gray-800 opacity-25"
           ></div>
           <nav
-            class="fixed top-0 left-0 bottom-0 flex flex-col w-5/6 max-w-sm py-6 px-6 bg-[#100d20] border-r overflow-y-auto"
+            class="fixed top-0 left-0 bottom-0 flex flex-col w-5/6 max-w-sm py-6  bg-[#100d20] border-r overflow-y-auto"
           >
             <div class="flex items-center mb-8">
               <a
@@ -449,43 +450,29 @@
       <!-- End Navbar -->
 
       <main>
-        <!--Hero Section-->
-        <section class="hero-section pt-16 lg:pt-48 relative bg-orange-100">
-          <div
-            class="max-w-7xl flex flex-col px-6 py-10 mx-auto space-y-6 lg:py-16 lg:flex-row lg:items-center"
-          >
+        <!-- Hero Section as Carousel -->
+        <section class="pt-24 lg:pt-32">
+          <div class="owl-carousel owl-theme">
             <div
-              class="w-full lg:w-1/2 lg:h-[400px] flex items-center justify-center md:justify-start"
+              class="max-w-7xl flex flex-col  py-4 mx-auto "
             >
-              <div
-                class="flex max-w-xl flex-col justify-center items-center md:items-start text-center md:text-start"
-              >
-                <p
-                  class="font-bold my-4 mb-8 text-xl w-80 text-center bg-white rounded-md"
-                >
-                  WELCOME TO OUR RESTAURENT
-                </p>
-                <h1
-                  class="text-4xl max-w-sm lg:max-w-xl lg:text-5xl font-extrabold tracking-wide text-[#373A40]"
-                >
-                  Delicious Foods for Every Occasion and Festival
-                </h1>
-                <p class="font-bold text-base max-w-sm text-[#EEEEEE] pr-4 py-4">
-                  Get delivery or takeaway from MLK soul food at 7109 Martin
-                  Luther King Junior Highway in Greater Landover. Order online
-                  and track your order live.
-                </p>
-
-                <div class="mt-4">
-                  <a href="order-now.html">
-                    <button
-                      type="button"
-                      class="px-6 py-3 m-1 font-bold border-4 border-orange-300 transition-colors duration-300 transform bg-[#EEEEEE] rounded-full hover:bg-gray-100 hover:text-black focus:text-white focus:outline-none hover:bg-white focus:bg-black"
-                    >
-                      Order Now
-                    </button>
-                  </a>
-                </div>
+              <div class="w-full  flex items-center justify-center">
+                <img
+                  src="images/banner1.jpeg"
+                  alt="Banner 1"
+                  class="rounded-lg h-[200px] lg:h-[450px] lg:object-fill object-unset"
+                />
+              </div>
+            </div>
+            <div
+              class="max-w-7xl flex flex-col  py-4 mx-auto "
+            >
+              <div class="w-full  flex items-center justify-center">
+                <img
+                  src="images/banner2.jpeg"
+                  alt="Banner 1"
+                  class="rounded-lg  h-[200px] lg:h-[450px] lg:object-fill object-unset"
+                />
               </div>
             </div>
           </div>
@@ -496,9 +483,9 @@
         <section>
           <div class="bg-white lg:py-10 pb-10">
             <div class="max-w-7xl mx-auto px-4">
-              <div class="text-center mb-16">
+              <div class="text-center lg:mb-16">
                 <h2
-                  class="text-3xl lg:text-4xl font-bold text-center text-white bg-gradient-to-r from-orange-500 to-red-500 py-4 mb-8 rounded-md"
+                  class="text-xl lg:text-4xl font-bold text-center text-white bg-gradient-to-r from-orange-500 to-red-500 py-4 mb-4 lg:mb-8 rounded-md"
                 >
                   Our Popular Menu
                 </h2>
@@ -508,11 +495,11 @@
                   href="appetizer.html"
                   class="transform transition-transform duration-300 ease-in-out hover:scale-105"
                 >
-                  <div class="bg-white shadow-lg rounded-lg p-6">
+                  <div class="bg-white shadow-lg lg:rounded-lg p-6">
                     <img
                       src="https://www.thespicehouse.com/cdn/shop/articles/Insane_Hot_Wings_720x.jpg?v=1588270427"
                       alt="Appetizers"
-                      class="w-full h-48 object-cover mb-4 rounded-lg"
+                      class="w-full h-48 object-cover mb-4 lg:rounded-lg"
                     />
                     <h3 class="text-xl font-bold text-black mb-2">
                       Appetizers
@@ -527,11 +514,11 @@
                   href="entrees.html"
                   class="transform transition-transform duration-300 ease-in-out hover:scale-105"
                 >
-                  <div class="bg-white shadow-lg rounded-lg p-6">
+                  <div class="bg-white shadow-lg lg:rounded-lg p-6">
                     <img
                       src="https://whatshouldimakefor.com/wp-content/uploads/2019/07/IMG_7743.jpg"
                       alt="entrees"
-                      class="w-full h-48 object-cover mb-4 rounded-lg"
+                      class="w-full h-48 object-cover mb-4 lg:rounded-lg"
                     />
                     <h3 class="text-xl font-bold text-black mb-2">
                       Burger & Sub
@@ -545,11 +532,11 @@
                   href="#"
                   class="transform transition-transform duration-300 ease-in-out hover:scale-105"
                 >
-                  <div class="bg-white shadow-lg rounded-lg p-6">
+                  <div class="bg-white shadow-lg lg:rounded-lg p-6">
                     <img
                       src="https://images.squarespace-cdn.com/content/v1/5b9952adc258b451bdc43cc2/1598829041232-9E721WS3N0SKJUPAH3PC/Breakfast+Platter+Ideas.JPG"
                       alt="Curries (Sea-Food)"
-                      class="w-full h-48 object-cover mb-4 rounded-lg"
+                      class="w-full h-48 object-cover mb-4 lg:rounded-lg"
                     />
                     <h3 class="text-xl font-bold text-black mb-2">
                       Breakfast Plater
@@ -563,11 +550,11 @@
                   href="#"
                   class="transform transition-transform duration-300 ease-in-out hover:scale-105"
                 >
-                  <div class="bg-white shadow-lg rounded-lg p-6">
+                  <div class="bg-white shadow-lg lg:rounded-lg p-6">
                     <img
                       src="https://www.allrecipes.com/thmb/c_AVpo9-1HBML0P0bRwbHkBllpo=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/86353-SimplePastaSalad-ddmfs-4x3-05131-1-4c7b5049d9464d339cc59f59edf62626.jpg"
                       alt="Curries (Vegetarian)"
-                      class="w-full h-48 object-cover mb-4 rounded-lg"
+                      class="w-full h-48 object-cover mb-4 lg:rounded-lg"
                     />
                     <h3 class="text-xl font-bold text-black mb-2">Salad</h3>
                     <p class="text-gray-600">
@@ -579,11 +566,11 @@
                   href="#"
                   class="transform transition-transform duration-300 ease-in-out hover:scale-105"
                 >
-                  <div class="bg-white shadow-lg rounded-lg p-6">
+                  <div class="bg-white shadow-lg lg:rounded-lg p-6">
                     <img
                       src="https://hips.hearstapps.com/hmg-prod/images/western-omelette-recipe-2-1676061474.jpg?crop=0.503xw:1.00xh;0.252xw,0&resize=1200:*"
                       alt="Rice and Biriyani"
-                      class="w-full h-48 object-cover mb-4 rounded-lg"
+                      class="w-full h-48 object-cover mb-4 lg:rounded-lg"
                     />
                     <h3 class="text-xl font-bold text-black mb-2">Omlets</h3>
                     <p class="text-gray-600">
@@ -596,11 +583,11 @@
                   href="#"
                   class="transform transition-transform duration-300 ease-in-out hover:scale-105"
                 >
-                  <div class="bg-white shadow-lg rounded-lg p-6">
+                  <div class="bg-white shadow-lg lg:rounded-lg p-6">
                     <img
                       src="https://res.cloudinary.com/the-infatuation/image/upload/f_auto/q_auto/v1664814507/images/Gage_and_Tollner_Dessert_and_Drinks-87_nx0gsa.jpg"
                       alt="Drinks & Desserts"
-                      class="w-full h-48 object-cover mb-4 rounded-lg"
+                      class="w-full h-48 object-cover mb-4 lg:rounded-lg"
                     />
                     <h3 class="text-xl font-bold text-black mb-2">
                       Drinks & Desserts
@@ -630,11 +617,11 @@
                 href="chicken.html"
                 class="duration-300 ease-in-out hover:scale-105"
               >
-                <div class="bg-white shadow-lg h-88 rounded-lg p-6">
+                <div class="bg-white shadow-lg h-88 lg:rounded-lg p-6">
                   <img
                     src="https://t3.ftcdn.net/jpg/02/91/35/16/360_F_291351654_FFAS60r2iHUkOY69RPRwEOVS76EU4SdA.jpg"
                     alt="Appetizers"
-                    class="w-full h-48 object-cover mb-4 rounded-lg"
+                    class="w-full h-48 object-cover mb-4 lg:rounded-lg"
                   />
                   <h3 class="text-xl font-bold text-black mb-2">
                     Whole Turkey Wing (1)
@@ -661,11 +648,11 @@
                 href="chili-chicken.html"
                 class="duration-300 ease-in-out hover:scale-105"
               >
-                <div class="bg-white shadow-lg h-88 rounded-lg p-6">
+                <div class="bg-white shadow-lg h-88 lg:rounded-lg p-6">
                   <img
                     src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzO9r5kWylYvGywI_qWZpgeSCyncU0EebpKiax54dX2FXlS8ERNCdiWbMyJ4pX2uqOUbU&usqp=CAU"
                     alt="Main Course"
-                    class="w-full h-48 object-cover mb-4 rounded-lg"
+                    class="w-full h-48 object-cover mb-4 lg:rounded-lg"
                   />
                   <h3 class="text-xl font-bold text-black mb-2">
                     Whole Chicken Wing (1)
@@ -689,11 +676,11 @@
                 </div>
               </a>
               <a href="#" class="duration-300 ease-in-out hover:scale-105">
-                <div class="bg-white shadow-lg h-88 rounded-lg p-6">
+                <div class="bg-white shadow-lg h-88 lg:rounded-lg p-6">
                   <img
                     src="https://www.shutterstock.com/image-photo/air-fryer-chicken-wings-glazed-600nw-2286706431.jpg"
                     alt="Desserts"
-                    class="w-full h-48 object-cover mb-4 rounded-lg"
+                    class="w-full h-48 object-cover mb-4 lg:rounded-lg"
                   />
                   <h3 class="text-xl font-bold text-black mb-2">
                     Whole Chicken Wing (4)
@@ -717,11 +704,11 @@
                 </div>
               </a>
               <a href="#" class="duration-300 ease-in-out hover:scale-105">
-                <div class="bg-white shadow-lg h-88 rounded-lg p-6">
+                <div class="bg-white shadow-lg h-88 lg:rounded-lg p-6">
                   <img
                     src="https://facts.net/wp-content/uploads/2023/11/10-chicken-wing-facts-1700733178.jpg"
                     alt="Appetizers"
-                    class="w-full h-48 object-cover mb-4 rounded-lg"
+                    class="w-full h-48 object-cover mb-4 lg:rounded-lg"
                   />
                   <h3 class="text-xl font-bold text-black mb-2">
                     Whole Chicken Wings (6)
@@ -745,11 +732,11 @@
                 </div>
               </a>
               <a href="#" class="duration-300 ease-in-out hover:scale-105">
-                <div class="bg-white shadow-lg h-88 rounded-lg p-6">
+                <div class="bg-white shadow-lg h-88 lg:rounded-lg p-6">
                   <img
                     src="https://facts.net/wp-content/uploads/2023/11/10-chicken-wing-facts-1700733178.jpg"
                     alt="Main Course"
-                    class="w-full h-48 object-cover mb-4 rounded-lg"
+                    class="w-full h-48 object-cover mb-4 lg:rounded-lg"
                   />
                   <h3 class="text-xl font-bold text-black mb-2">
                     Whole Chicken Wings (8)
@@ -773,11 +760,11 @@
                 </div>
               </a>
               <a href="#" class="duration-300 ease-in-out hover:scale-105">
-                <div class="bg-white shadow-lg h-88 rounded-lg p-6">
+                <div class="bg-white shadow-lg h-88 lg:rounded-lg p-6">
                   <img
                     src="https://omnivorescookbook.com/wp-content/uploads/2023/09/230718_Braised-Pork-Trotters_550.jpg"
                     alt="Desserts"
-                    class="w-full h-48 object-cover mb-4 rounded-lg"
+                    class="w-full h-48 object-cover mb-4 lg:rounded-lg"
                   />
                   <h3 class="text-xl font-bold text-black mb-2">
                     Pig Feet (1)
@@ -942,6 +929,22 @@
       <!--End Footer-->
 
       <script src="js/index.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+      <script>
+        $(document).ready(function () {
+          $(".owl-carousel").owlCarousel({
+            loop: true,
+            margin: 10,
+            nav: true,
+            dots: true,
+            items: 1,
+            autoplay: true,
+            autoplayTimeout: 5000,
+            autoplayHoverPause: true,
+          });
+        });
+      </script>
     </div>
   </body>
 </html>
